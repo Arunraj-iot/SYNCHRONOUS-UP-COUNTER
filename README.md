@@ -28,30 +28,41 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Initialize the shift register to a known state (e.g., all zeros).
+
+2.Input a bit serially into the shift register.
+
+3.Shift the contents of the register one position to the right (or left).
+
+4.Output the shifted bit from the last stage of the register.
+
+5.Repeat steps 2-4 for each bit you want to input and shift.
 
 **PROGRAM**
 
-![Screenshot 2025-05-05 144224](https://github.com/user-attachments/assets/00e28ca9-40cc-4708-801f-352c69a1354b)
+      module synupcounter(out,clk,rstn);
+      input clk,rstn;
+      output reg [3:0]out;
+      always @ (posedge clk)
+      begin
+         if(!rstn)
+           out<=0;
+         else 
+           out <= out+1;
+      end
+      endmodule
 
-
-Developed by:AHAMADH SULAIMAN M RegisterNumber:212224230009
-*/
-
+Developed by:ARUNRAJ R RegisterNumber: 212224110006
 
 **RTL LOGIC UP COUNTER**
-
-![Screenshot 2025-05-05 143318](https://github.com/user-attachments/assets/5c82ff7d-e6a5-4cc9-a00b-98f42fe2413f)
+![Screenshot (225)](https://github.com/user-attachments/assets/b119286c-56fe-4efb-a51d-7ccf4bccd73b)
 
 **TIMING DIAGRAM FOR IP COUNTER**
-
-
-![Screenshot 2025-05-05 145148](https://github.com/user-attachments/assets/5aeb479e-0542-4b58-ad1f-22f23a30bd71)
-
-
+![Screenshot (226)](https://github.com/user-attachments/assets/038cb6d2-2e37-4abf-b1b1-2100f15475f7)
 
 **TRUTH TABLE**
-
+![image](https://github.com/user-attachments/assets/cda1c39e-b18f-4d00-824a-2b77e7f2eaa3)
 
 **RESULTS**
-Thus, the 4-bit synchronous up counter is implemented successfully.
+
+Hence a 4 bit synchronous up counter is implemented correctly
